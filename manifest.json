@@ -1,0 +1,61 @@
+{
+    "name": "Code Stack",
+    "short_name":"CS",
+    "version": "0.1.1",
+    "description": "Online Service Connector {Integrated Information}",
+    "manifest_version" : 2,
+    "author": "kangjeuk",
+    "homepage_url": "https://viestacks.com",
+    
+    "icons": {
+        "16": "icon16.png",
+        "32": "icon32.png",
+        "48": "icon48.png",
+        "96": "icon96.png",
+        "128": "icon128.png"
+    },
+
+    
+    "permissions":[
+        "activeTab",
+        "storage"
+    ],
+    "optional_permissions": [
+        "unlimitedStorage"
+    ],
+    "host_permissions": [
+        "*://*.acmicpc.net/*",
+        "*://*.codeforces.com/*",
+        "*://*.swexpertacademy.com/main/main.do/*",
+        "*://github.com/*"
+    ],
+    "web_accessible_resources":[
+        "svg/*.svg",
+        "css/*.css",
+        "img/note-icon.png"
+    ],
+    "content_scripts":[{
+        "matches":[
+            "*://*.acmicpc.net/*",
+            "*://github.com/*"
+        ],
+        "run_at":"document_idle",
+        "all_frames":true,
+        "js": [
+            "ext/jQuery.v3.6.0.min.js",
+            "ext/bootstrap.3.2.0.min.js",
+            "src/content/main.js",
+            "src/content/utils.js",
+            "src/content/inject_style.js"
+        ]
+    }],
+    "browser_action":{
+        "default_popup": "popup.html"
+    }
+
+    
+
+    
+
+    
+}

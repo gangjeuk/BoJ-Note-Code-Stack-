@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+a {
+    transition: all .3s ease;
+}
+
+body, input, button, select, textarea, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .purchase span {
+ font-family: "Helvetica Neue", "Open Sans", "Noto Sans CJK KR", sans-serif !important;
+}
+
+.note-icon{
+    padding:10px;
+    display: inline-block;
+    width: 99%;
+
+}
+.note-icon:before{
+    text-align: justify;
+    overflow: hidden;
+    display: block;
+    padding: 10px;
+}
+
+.problem_title:before {
+    content: "#";
+    opacity: 0.4;
+}
