@@ -1,0 +1,68 @@
+{
+    "name": "Code Stack",
+    "short_name":"CS",
+    "version": "0.1.1",
+    "description": "Online Service Connector {Integrated Information}",
+    "manifest_version" : 3,
+    "author": "kangjeuk",
+    "homepage_url": "https://viestacks.com",
+    
+    "icons": {
+        "16": "icon48.png",
+        "32": "icon48.png",
+        "48": "icon128.png",
+        "96": "icon128.png",
+        "128": "icon128.png"
+    },
+
+    
+    "permissions":[
+        "activeTab",
+        "storage"
+    ],
+  
+    "host_permissions": [
+        "*://*.acmicpc.net/*",
+        "*://*.codeforces.com/*",
+        "*://*.swexpertacademy.com/main/main.do/*",
+        "*://github.com/*"
+    ],
+    "web_accessible_resources":[{
+        "resources" : [
+            "css/*.css",
+            "img/note-icon.png",
+            "img/popup-note/*.png"
+        ],
+        "matches": ["<all_urls>"]
+    }],
+        
+    "content_scripts":[{
+        "matches":[
+            "*://*.acmicpc.net/*",
+            "*://github.com/*"
+        ],
+        "run_at":"document_idle",
+        "all_frames":true,
+        "js": [
+            "ext/jquery-3.6.0.min.js",
+            "ext/bootstrap.bundle.min.js",
+            "ext/bootstrap.min.css",
+            "src/popup-note/popup_note.js",
+            "src/chrome-popup/App.js",
+            "src/Apis/Boj/Boj.js",
+            "src/utils.js",
+            "src/main.js"
+            
+
+        ]
+    }],
+    "action":{
+        "default_popup": "popup.html"
+    }
+
+    
+
+    
+
+    
+}
